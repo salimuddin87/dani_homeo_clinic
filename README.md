@@ -1,9 +1,9 @@
-# dani_homeo_clinic
+# dani_homeo_clinic (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)
 python -m pip install Django
 
 # Requirement
-python == 3.9.1
-django == 3.2
+1. python == 3.9.1
+2. django == 3.2
 
 
 # TODO List

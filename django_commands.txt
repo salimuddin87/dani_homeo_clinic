@@ -4,3 +4,8 @@ python manage.py runserver 8080             # To change the server ports
 python manage.py runserver 0:8000           # To change the server IP
 python manage.py createsuperuser
 python manage.py startapp <appname>
+python manage.py check                      # To check for any problems in project without making any migration
+
+python manage.py makemigrations <appname>   # If changes are made to models, create migrations for changes
+python manage.py sqlmigrate <appname> 0001  # Takes migration names and returns their SQL
+python manage.py migrate                    # Takes all the migrations that haven’t been applied and runs against database
