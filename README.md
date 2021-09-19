@@ -1,4 +1,4 @@
-### DaniHomeoClinic (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)
+### DaniHomeoClinic (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)
 python -m pip install Django
 
 ### Requirement
