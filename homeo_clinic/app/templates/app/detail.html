@@ -1,0 +1,6 @@
+<h1>{{ medicine_list.medicine_name }}</h1>
+<ul>
+{% for choice in medicine_list.choice_set.all %}
+    <li>{{ choice.choice_text }}</li>
+{% endfor %}
+</ul>
