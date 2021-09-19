@@ -14,6 +14,13 @@ python -m pip install Django
 ### To create a virtual environment in python
 https://docs.python.org/3/tutorial/venv.html
 
+
+### Documentation
+https://docs.djangoproject.com/en/3.2/topics/
+https://docs.djangoproject.com/en/3.2/intro/reusable-apps/
+https://www.geeksforgeeks.org/django-tutorial/
+
+
 ### To add admin to local templates
 create a directory called admin inside templates, and copy the template admin/base_site.html from within the default 
 Django admin template directory in the source code of Django itself (django/contrib/admin/templates) into that directory.
