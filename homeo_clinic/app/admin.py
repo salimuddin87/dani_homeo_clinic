@@ -5,8 +5,7 @@ from .models import MedicineDetail
 
 class MedicineAdmin(admin.ModelAdmin):
     fieldsets = [
-        (None, {'fields': ['medicine_code', 'medicine_name']}),
-        # (None, {'fields': ['medicine_name']}),
+        (None, {'fields': ['medicine_name']}),
         (None, {'fields': ['medicine_brand']}),
         (None, {'fields': ['strength']}),
         (None, {'fields': ['in_stock']}),
@@ -16,7 +15,6 @@ class MedicineAdmin(admin.ModelAdmin):
         (None, {'fields': ['date_of_exp']}),
     ]
     list_display = (
-        'medicine_code',
         'medicine_name',
         'medicine_brand',
         'strength',
@@ -29,7 +27,7 @@ class MedicineAdmin(admin.ModelAdmin):
 
     list_filter = ['medicine_brand']
 
-    search_fields = ['medicine_code', 'medicine_name','therapeutic_use', 'symptom']
+    search_fields = ['medicine_name','therapeutic_use', 'symptom']
 
     @admin.display(
         boolean=True,
