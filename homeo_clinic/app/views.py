@@ -11,7 +11,7 @@ class IndexView(generic.ListView):
     context_object_name = 'latest_medicine_list'
 
     def get_queryset(self):
-        return MedicineDetail.objects.order_by('date_of_exp')[:20]
+        return MedicineDetail.objects.order_by('medicine_name')[:20]
 
 
 class DetailView(generic.ListView):

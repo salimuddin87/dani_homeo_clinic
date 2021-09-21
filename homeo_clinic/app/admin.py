@@ -29,13 +29,7 @@ class MedicineAdmin(admin.ModelAdmin):
 
     search_fields = ['medicine_name','therapeutic_use', 'symptom']
 
-    @admin.display(
-        boolean=True,
-        ordering='medicine_name',
-        description='Medicine Name'
-    )
-    def search_medicine(self):
-        pass
+    sortable_by = ['medicine_name', 'medicine_brand', 'strength', 'in_stock', 'date_of_mfg', 'date_of_exp']
 
 
 admin.site.register(MedicineDetail, MedicineAdmin)
