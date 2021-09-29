@@ -7,6 +7,8 @@ class MedicineDetail(models.Model):
         ('reckeweg', 'Reckeweg'),
         ('sbl', 'SBL'),
         ('schwabe', 'Schwabe'),
+        ('bakson', 'Bakson'),
+        ('bhargawa', 'Bhargawa'),
     )
 
     strength_choice = (
