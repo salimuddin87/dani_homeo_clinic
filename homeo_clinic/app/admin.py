@@ -9,20 +9,28 @@ class MedicineAdmin(admin.ModelAdmin):
         (None, {'fields': ['medicine_brand']}),
         (None, {'fields': ['strength']}),
         (None, {'fields': ['in_stock']}),
-        (None, {'fields': ['therapeutic_use']}),
-        (None, {'fields': ['symptom']}),
+        (None, {'fields': ['location']}),
+        (None, {'fields': ['quantity']}),
         (None, {'fields': ['date_of_mfg']}),
         (None, {'fields': ['date_of_exp']}),
+        (None, {'fields': ['mrp']}),
+        (None, {'fields': ['spr']}),
+        (None, {'fields': ['therapeutic_use']}),
+        (None, {'fields': ['symptom']}),
     ]
     list_display = (
         'medicine_name',
         'medicine_brand',
         'strength',
         'in_stock',
-        'therapeutic_use',
-        'symptom',
+        'location',
+        'quantity',
         'date_of_mfg',
         'date_of_exp',
+        'mrp',
+        'spr',
+        'therapeutic_use',
+        'symptom',
     )
 
     list_filter = ['medicine_brand']
