@@ -12,6 +12,9 @@ class MedicineDetail(models.Model):
     )
 
     strength_choice = (
+        ('Combination', 'Combination'),
+        ('ExternalUse', 'External Use'),
+        ('Syrup', 'Syrup'),
         ('Mother', 'Mother'),
         ('CM', 'CM'),
         ('10M', '10M'),
@@ -46,9 +49,7 @@ class MedicineDetail(models.Model):
     location = models.CharField(max_length=6, null=True, choices=location_choice)
     quantity = models.CharField(max_length=6, default='', blank=True, null=True)
     count = models.IntegerField(default=0, blank=True, null=True)
-    date_of_mfg = models.DateField(blank=True, null=True)
-    date_of_exp = models.DateField(blank=True, null=True)
     mrp = models.CharField(max_length=10, default='', blank=True, null=True)
     spr = models.CharField(max_length=10, default='', blank=True, null=True)
     therapeutic_use = models.CharField(max_length=300, default='', blank=True, null=True)
-    symptom = models.CharField(max_length=500, default='', blank=True, null=True)
+    symptom = models.CharField(max_length=1000, default='', blank=True, null=True)

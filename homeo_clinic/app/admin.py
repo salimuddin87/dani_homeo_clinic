@@ -12,8 +12,6 @@ class MedicineAdmin(admin.ModelAdmin):
         (None, {'fields': ['location']}),
         (None, {'fields': ['quantity']}),
         (None, {'fields': ['count']}),
-        (None, {'fields': ['date_of_mfg']}),
-        (None, {'fields': ['date_of_exp']}),
         (None, {'fields': ['mrp']}),
         (None, {'fields': ['spr']}),
         (None, {'fields': ['therapeutic_use']}),
@@ -27,8 +25,6 @@ class MedicineAdmin(admin.ModelAdmin):
         'location',
         'quantity',
         'count',
-        'date_of_mfg',
-        'date_of_exp',
         'mrp',
         'spr',
         'therapeutic_use',
@@ -39,7 +35,7 @@ class MedicineAdmin(admin.ModelAdmin):
 
     search_fields = ['medicine_name','therapeutic_use', 'symptom']
 
-    sortable_by = ['medicine_name', 'medicine_brand', 'strength', 'in_stock', 'date_of_mfg', 'date_of_exp']
+    sortable_by = ['medicine_name', 'medicine_brand', 'strength', 'in_stock']
 
 
 admin.site.register(MedicineDetail, MedicineAdmin)
