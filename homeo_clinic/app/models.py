@@ -46,7 +46,7 @@ class MedicineDetail(models.Model):
     medicine_brand = models.CharField(max_length=100, choices=medicine_brand_choice)
     strength = models.CharField(max_length=100, null=True, choices=strength_choice)
     in_stock = models.CharField(max_length=100, null=True, choices=in_stock_choice)
-    location = models.CharField(max_length=6, null=True, choices=location_choice)
+    location = models.CharField(max_length=6, blank=True, null=True, choices=location_choice)
     quantity = models.CharField(max_length=6, default='', blank=True, null=True)
     count = models.IntegerField(default=0, blank=True, null=True)
     mrp = models.CharField(max_length=10, default='', blank=True, null=True)
