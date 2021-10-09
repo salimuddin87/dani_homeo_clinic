@@ -53,3 +53,42 @@ class MedicineDetail(models.Model):
     spr = models.CharField(max_length=10, default='', blank=True, null=True)
     therapeutic_use = models.CharField(max_length=300, default='', blank=True, null=True)
     symptom = models.CharField(max_length=1000, default='', blank=True, null=True)
+
+
+class PatientDetail(models.Model):
+
+    gender_choices = (
+        ('male', 'Male'),
+        ('female', 'Female'),
+        ('other', 'Not Mentioned'),
+    )
+
+    patient_type_choices = (
+        ('new', 'New'),
+        ('old', 'Old'),
+        ('fup', 'FUP'),
+    )
+
+    clinic_info_choices = (
+        ('pamplet', 'Newspaper'),
+        ('online1', 'Practo'),
+        ('online2', 'Google'),
+        ('online3', 'Facebook'),
+        ('online4', 'Instagram'),
+        ('recommended', 'Recommended'),
+        ('hoarding', 'Hoarding'),
+        ('walk-in', 'WalkIn'),
+    )
+
+    date = models.DateField()
+    patient_name = models.CharField(max_length=300)
+    age = models.IntegerField(default=0, blank=True, null=True)
+    gender = models.CharField(max_length=8, choices=gender_choices)
+    contact_no = models.CharField(max_length=15, blank=True, null=True)
+    patient_type = models.CharField(max_length=10, choices=patient_type_choices)
+    clinic_info = models.CharField(max_length=20, blank=True, null=True, choices=clinic_info_choices)
+    disease = models.CharField(max_length=300, blank=True, null=True)
+    symptoms = models.CharField(max_length=300, blank=True, null=True)
+    prescription = models.CharField(max_length=500, blank=True, null=True)
+    consultation = models.IntegerField(default=0, blank=True, null=True)
+    medicine_fee = models.IntegerField(default=0, blank=True, null=True)
