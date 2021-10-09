@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from .models import MedicineDetail
+from .models import MedicineDetail, PatientDetail
 
 
 class MedicineAdmin(admin.ModelAdmin):
@@ -38,4 +38,51 @@ class MedicineAdmin(admin.ModelAdmin):
     sortable_by = ['medicine_name', 'medicine_brand', 'strength', 'in_stock']
 
 
+class PatientAdmin(admin.ModelAdmin):
+    fieldsets = [
+        (None, {'fields': ['date']}),
+        (None, {'fields': ['patient_name']}),
+        (None, {'fields': ['age']}),
+        (None, {'fields': ['gender']}),
+        (None, {'fields': ['contact_no']}),
+        (None, {'fields': ['patient_type']}),
+        (None, {'fields': ['clinic_info']}),
+        (None, {'fields': ['disease']}),
+        (None, {'fields': ['symptoms']}),
+        (None, {'fields': ['prescription']}),
+        (None, {'fields': ['consultation']}),
+        (None, {'fields': ['medicine_fee']}),
+    ]
+    list_display = (
+        'date',
+        'patient_name',
+        'age',
+        'gender',
+        'contact_no',
+        'patient_type',
+        'clinic_info',
+        'disease',
+        'symptoms',
+        'prescription',
+        'consultation',
+        'medicine_fee',
+    )
+
+    search_fields = [
+        'date',
+        'patient_name',
+        'age',
+        'gender',
+        'contact_no',
+        'patient_type',
+        'clinic_info',
+        'disease',
+        'symptoms',
+        'prescription',
+    ]
+
+    sortable_by = ['date', 'patient_name', 'age', 'gender', 'disease']
+
+
 admin.site.register(MedicineDetail, MedicineAdmin)
+admin.site.register(PatientDetail, PatientAdmin)

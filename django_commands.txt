@@ -11,3 +11,8 @@ python manage.py makemigrations <appname>   # If changes are made to models, cre
 python manage.py sqlmigrate <appname> 0001  # Takes migration names and returns their SQL
 python manage.py migrate                    # Takes all the migrations that haven’t been applied and runs against database
 python manage.py test <appname>             # To run test of an app
+
+# sqllite db commands
+python3 manage.py dbshell
+sqlite> .databases
+sqlite> .tables
