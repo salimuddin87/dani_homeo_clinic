@@ -37,6 +37,8 @@ class MedicineAdmin(admin.ModelAdmin):
 
     sortable_by = ['medicine_name', 'medicine_brand', 'strength', 'in_stock']
 
+    list_per_page = 5
+
 
 class PatientAdmin(admin.ModelAdmin):
     fieldsets = [
@@ -82,6 +84,8 @@ class PatientAdmin(admin.ModelAdmin):
     ]
 
     sortable_by = ['date', 'patient_name', 'age', 'gender', 'disease']
+
+    list_per_page = 10
 
 
 admin.site.register(MedicineDetail, MedicineAdmin)
