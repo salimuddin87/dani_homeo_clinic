@@ -97,7 +97,7 @@ class PatientAdmin(admin.ModelAdmin):
 
     sortable_by = ['date', 'patient_name', 'age', 'gender', 'disease']
 
-    list_per_page = 10
+    list_per_page = 5
 
 
 admin.site.register(MedicineDetail, MedicineAdmin)
