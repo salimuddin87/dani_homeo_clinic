@@ -31,7 +31,7 @@ class MedicineAdmin(admin.ModelAdmin):
         'symptom',
     )
 
-    list_filter = ['medicine_brand', 'in_stock', 'strength']
+    # list_filter = ['medicine_brand', 'in_stock']
 
     search_fields = ['medicine_name', 'therapeutic_use', 'symptom']
 
