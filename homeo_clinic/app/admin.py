@@ -4,19 +4,15 @@ from .models import MedicineDetail, PatientDetail
 
 
 class MedicineAdmin(admin.ModelAdmin):
-    fieldsets = [
-        (None, {'fields': ['medicine_name']}),
-        (None, {'fields': ['medicine_brand']}),
-        (None, {'fields': ['strength']}),
-        (None, {'fields': ['in_stock']}),
-        (None, {'fields': ['location']}),
-        (None, {'fields': ['quantity']}),
-        (None, {'fields': ['count']}),
-        (None, {'fields': ['mrp']}),
-        (None, {'fields': ['spr']}),
-        (None, {'fields': ['therapeutic_use']}),
-        (None, {'fields': ['symptom']}),
-    ]
+    fields = (
+        ('medicine_name', 'medicine_brand'),
+        ('strength', 'in_stock', 'location'),
+        ('quantity', 'count'),
+        ('mrp', 'spr'),
+        'therapeutic_use',
+        'symptom',
+    )
+
     list_display = (
         'medicine_name',
         'medicine_brand',
@@ -41,26 +37,22 @@ class MedicineAdmin(admin.ModelAdmin):
 
 
 class PatientAdmin(admin.ModelAdmin):
-    fieldsets = [
-        (None, {'fields': ['date']}),
-        (None, {'fields': ['patient_name']}),
-        (None, {'fields': ['age']}),
-        (None, {'fields': ['gender']}),
-        (None, {'fields': ['contact_no']}),
-        (None, {'fields': ['patient_type']}),
-        (None, {'fields': ['clinic_info']}),
-        (None, {'fields': ['disease']}),
-        (None, {'fields': ['symptoms']}),
-        (None, {'fields': ['past_history']}),
-        (None, {'fields': ['family_history']}),
-        (None, {'fields': ['generalities']}),
-        (None, {'fields': ['on_examination']}),
-        (None, {'fields': ['lab_reports']}),
-        (None, {'fields': ['prescription']}),
-        (None, {'fields': ['advice']}),
-        (None, {'fields': ['consultation']}),
-        (None, {'fields': ['medicine_fee']}),
-    ]
+    fields = (
+        ('date', 'patient_name'),
+        ('age', 'gender', 'contact_no'),
+        ('patient_type', 'clinic_info'),
+        'disease',
+        'symptoms',
+        'past_history',
+        'family_history',
+        'generalities',
+        'on_examination',
+        'lab_reports',
+        'prescription',
+        'advice',
+        ('consultation', 'medicine_fee'),
+    )
+
     list_display = (
         'date',
         'patient_name',
