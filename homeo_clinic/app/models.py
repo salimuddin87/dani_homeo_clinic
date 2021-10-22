@@ -88,7 +88,7 @@ class PatientDetail(models.Model):
     patient_type = models.CharField(max_length=10, choices=patient_type_choices)
     clinic_info = models.CharField(max_length=20, blank=True, null=True, choices=clinic_info_choices)
     disease = models.TextField(max_length=500, blank=True, null=True)
-    symptoms = models.TextField(max_length=500, blank=True, null=True)
+    symptoms = models.TextField(max_length=1000, blank=True, null=True)
     past_history = models.TextField(max_length=500, blank=True, null=True)
     family_history = models.TextField(max_length=500, blank=True, null=True)
     generalities = models.TextField(max_length=500, blank=True, null=True)
